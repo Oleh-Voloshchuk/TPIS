@@ -23,6 +23,7 @@ def check_time(d):
 
 
 def main(url=''):
+
     if not url:
         print("No URL passed to function")
         return False
@@ -41,16 +42,15 @@ def main(url=''):
 
 def home_work(url=''):
     # Ваш захист
-    r = requests.get(url=url)
-    d = r.json()
-    str_time = d['time']
-    find_p = str_time.find("P")
-    if find_p == -1:
-        print("Добрий день")
+    r_get = requests.get(url=url)
+    a = r_get.json()
+    time = a['time']
+    p = time.find("P")
+    if p == -1:
+        print("Доброго дня")
     else:
         print("Доброї ночі")
     return True
-
 
 def my_good_fun():
     return "success"
