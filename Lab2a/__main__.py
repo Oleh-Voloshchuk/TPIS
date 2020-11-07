@@ -25,8 +25,11 @@ def how_to_write_logs():
     logger.error("Це повідомлення про помилку")
 
 
-def try_it():
-    A = 'sds'
+def try_it(a = True):
+    if a:
+        A = 'sds'
+    else:
+        A = 2
     try:
         print('Що буде якщо', A + 10, "?")
     except Exception as e:
@@ -47,4 +50,5 @@ if __name__ == '__main__':
     print(common.get_current_platform())
     a = True
     common.my_list(a)
-    try_it()
+    try_it(True)
+    try_it(False)
