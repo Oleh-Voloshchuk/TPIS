@@ -42,15 +42,19 @@ def main(url=''):
 
 def home_work(url=''):
     # Ваш захист
-    r_get = requests.get(url=url)
-    a = r_get.json()
-    time = a['time']
-    p = time.find("P")
-    if p == -1:
-        print("Доброго дня")
+    r = requests.get(url=url)
+    for char in r.text:
+        if char == 'A':
+            true=True
+            break
+        else:
+            true=False
+    if true:
+        print('good night')
+
     else:
-        print("Доброї ночі")
-    return True
+        print('good day')
+    return true
 
 def my_good_fun():
     return "success"

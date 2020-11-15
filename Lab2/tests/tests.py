@@ -19,7 +19,7 @@ class TestClass(unittest.TestCase):
         # Перевіряємо що у відповіді відсутнє поле дата (тобто передана направильна URL)
         with self.assertRaises(Exception):
             main(self.ip_url)
-
     def test_home_work(self):
         # Ваш захист
-        self.assertTrue(home_work(self.date_url))
+        self.assertEqual(home_work("http://date.jsontest.com/"), True)
+        self.assertEqual(home_work("http://date.jsontest.com/"), False)
