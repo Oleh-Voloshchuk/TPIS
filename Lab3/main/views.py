@@ -9,6 +9,8 @@ def main(request):
 
 
 def health(request):
-    response = {'date': 'test1', 'current_page': "test2", 'server_info': "test3", 'client_info': "test4"}
+    local_dt = datetime.now()
+    response = {'date': local_dt, 'current_page': request.build_absolute_uri(), 'server_info': os.name, 'client_info': os.uname()[1]}
     return JsonResponse(response)
 # Create your views here.
+
