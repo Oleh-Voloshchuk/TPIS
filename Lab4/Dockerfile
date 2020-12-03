@@ -4,16 +4,16 @@ LABEL author="Oleh"
 LABEL version=1.0
 
 # оновлюємо систему
-RUN sudo apt-get update && sudo apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 
 # Встановлюємо потрібні пакети
-RUN sudo apt-get install git -y && sudo pip install pipenv
+RUN apt-get install git -y && pip install pipenv
 
 # Створюємо робочу папку
 WORKDIR /Lab4
 
 # Завантажуємо файли з Git
-RUN git clone https://github.com/Oleh-Voloshchuk/TPIS/tree/main/Lab3
+RUN git clone https://github.com/Oleh-Voloshchuk/TPIS.git
 
 # Створюємо остаточну робочу папку з Веб-сайтом та копіюємо туди файли
 WORKDIR /app
