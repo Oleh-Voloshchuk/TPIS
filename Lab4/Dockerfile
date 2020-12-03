@@ -17,7 +17,7 @@ RUN git clone https://github.com/Oleh-Voloshchuk/TPIS/tree/main/Lab3
 
 # Створюємо остаточну робочу папку з Веб-сайтом та копіюємо туди файли
 WORKDIR /app
-RUN cp -r /Lab4/TPIS/LAB3/* .
+RUN cp -r /Lab4/TPIS/Lab3/* .
 
 # Інсталюємо всі залежності
 RUN pipenv install
